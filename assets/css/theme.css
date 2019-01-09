@@ -1,0 +1,22 @@
+body.theme1 #app {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 5rem auto 7.5rem;
+  grid-template-areas: 
+    "h h h h"
+    "m m m s"
+    "f f f f";
+}
+body.theme1 #header {
+  grid-area: h;
+}
+body.theme1 #main {
+  grid-area: m;
+}
+body.theme1 #side {
+  grid-area: s;
+}
+body.theme1 #foot {
+  grid-area: f;
+}

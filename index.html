@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <script type="text/javascript" src="assets/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/handlebars/handlebars-v4.0.12.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/Cashier.js"></script>
+    <title>Market Cashier</title>
+    <script id="yy_tpl_curTime" type="text/x-handlebars-template">
+      <span>{{value}}</span>
+    </script>
+    <script id="yy_tpl_list" type="text/x-handlebars-template">
+      <ul>
+        {{#each list}}
+        <li>
+          <span>{{index}}</span>
+          <span>{{id}}</span>
+          <span>{{code}}</span>
+          <span>{{name}}</span>
+          <span>{{count}}</span>
+          <span>{{price_0}}</span>
+          <span>{{price_1}}</span>
+          <span>{{price_sum}}</span>
+          <span>{{seller}}</span>
+          <span>{{datetime}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </script>
+  </head>
+  <body class="theme1">
+    <div id="app">
+      <div id="header"><p id="yy_curTime"></p></div>
+      <div id="main">
+        <div id="yy_list">
+        </div>
+      </div>
+      <div id="side">Side</div>
+      <div id="foot">Foot</div>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      var CashierPage = new CashierModal()
+      CashierPage.curDateTime = new Date()
+      CashierPage.mainList.push({
+        index: 1,
+        id: '123',
+        code: 'code',
+        name: 'testName',
+        count: 1,
+        price_0: 1.26,
+        price_1: 1.26,
+        price_sum: 1.26,
+        seller: 'None',
+        datetime: 'now'
+      })
+    })
+  </script>
+</html>
