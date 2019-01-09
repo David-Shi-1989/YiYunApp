@@ -2,8 +2,6 @@ function CashierModal () {
   var me = {
     def: {
       selector: {
-        curTimeDOMId: 'yy_curTime',
-        curTimeTplId: 'yy_tpl_curTime',
         listDOM: 'yy_list',
         listTpl: 'yy_tpl_list'
       }
@@ -38,6 +36,37 @@ function CashierModal () {
       onchange () {
         commonTplRender(me.def.selector.listDOM, me.def.selector.listTpl, {list: this.getList()})
       }
+    },
+    init () {
+      this.initDefaultValue()
+      this.initFormBind()
+    },
+    initDefaultValue () {
+      this.curDateTime = Date.now()
+      this.shopName = '翼云纸品'
+    },
+    initFormBind () {
+      $("#input_shopName").val(this.shopName)
+      $("#input_curDateTime").val(this.curDateTime)
+    },
+    onShopNameChange (input) {
+      this.shopName = input.value
+    },
+    onCurDateTimeChange (input) {
+      var newValStr = input.value
+      var isValid = false
+      try {
+        var dd = new Date(newValStr)
+        if (dd.getFullYear()) {
+          this.curDateTime = dd
+          isValid = true
+        }
+      } catch (e) {
+      }
+      if (!isValid) {
+        alert('时间输入错误!')
+        input.value = this.curDateTime
+      }
     }
   };
   Object.defineProperties(me, {
@@ -56,7 +85,23 @@ function CashierModal () {
         } else if (typeof(newVal) == 'object' && newVal.getFullYear) {
           this._curDateTime = newVal.valueOf()
         }
-        commonTplRender(this.def.selector.curTimeDOMId, this.def.selector.curTimeTplId, {value: this.curDateTime})
+        $('#yy_curTime').text(this.curDateTime);
+      }
+    },
+    _shopName: {
+      value: '',
+      writable: true,
+      configurable: false
+    },
+    shopName: {
+      get: function () {
+        return this._shopName;
+      },
+      set: function (val) {
+        if (typeof (val) == 'string') {
+          this._shopName = val.trim()
+          $('#yy_shopName').text(this._shopName)
+        }
       }
     }
   })

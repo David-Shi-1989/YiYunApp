@@ -10,9 +10,6 @@
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/Cashier.js"></script>
     <title>Market Cashier</title>
-    <script id="yy_tpl_curTime" type="text/x-handlebars-template">
-      <span>{{value}}</span>
-    </script>
     <script id="yy_tpl_list" type="text/x-handlebars-template">
       <ul>
         {{#each list}}
@@ -34,7 +31,10 @@
   </head>
   <body class="theme1">
     <div id="app">
-      <div id="header"><p id="yy_curTime"></p></div>
+      <div id="header">
+        <p id="yy_shopName"></p>
+        <p id="yy_curTime"></p>
+      </div>
       <div id="main">
         <div id="yy_list">
         </div>
@@ -42,11 +42,27 @@
       <div id="side">Side</div>
       <div id="foot">Foot</div>
     </div>
+    <div class="yy-modal">
+      <div class="yy-modal-form-wrap">
+        <form>
+          <ul>
+            <li>
+              <label>超市名称</label>
+              <input type="text" id="input_shopName" onkeyup="CashierPage.onShopNameChange(this)"/>
+            </li>
+            <li>
+              <label>当前时间</label>
+              <input type="text" id="input_curDateTime" onchange="CashierPage.onCurDateTimeChange(this)"/>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
   </body>
   <script>
     $(function () {
-      var CashierPage = new CashierModal()
-      CashierPage.curDateTime = new Date()
+      CashierPage = new CashierModal()
+      CashierPage.init()
       CashierPage.mainList.push({
         index: 1,
         id: '123',
@@ -60,5 +76,8 @@
         datetime: 'now'
       })
     })
+    function onInputShopNameChange () {
+
+    }
   </script>
 </html>

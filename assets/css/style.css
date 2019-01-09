@@ -5,6 +5,7 @@
 body, html {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 html {
   font-size: 20px;
@@ -12,4 +13,42 @@ html {
 #app {
   width: 100%;
   height: 100%;
+}
+label {
+  font-size: 0.75rem;
+}
+ul {
+  list-style: none;
+}
+
+/*************
+* 弹窗
+**************/
+.yy-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.yy-modal .yy-modal-form-wrap {
+  position: relative;
+  --form-width: 40rem;
+  --form-height: 30rem;
+  width: var(--form-width);
+  height: var(--form-height);
+  top: calc((100% - var(--form-height)) / 2);
+  left: calc((100% - var(--form-width)) / 2);
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem #777;
+}
+
+.yy-modal .yy-modal-form-wrap form {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
 }
