@@ -28,6 +28,43 @@
         {{/each}}
       </ul>
     </script>
+    <script id="yy_tpl_list_input" type="text/x-handlebars-template">
+        {{#each list}}
+        <tr>
+          {{#if isEdit}}
+          <td><Input type="text" value="{{index}}" id="input_list_index_{{_index}}"></td>
+          <td><Input type="text" value="{{id}}" id="input_list_id_{{_index}}"></td>
+          <td><Input type="text" value="{{code}}" id="input_list_code_{{_index}}"></td>
+          <td><Input type="text" value="{{name}}" id="input_list_name_{{_index}}"></td>
+          <td><Input type="text" value="{{count}}" id="input_list_count_{{_index}}"></td>
+          <td><Input type="text" value="{{price_0}}" id="input_list_price_0_{{_index}}"></td>
+          <td><Input type="text" value="{{price_1}}" id="input_list_price_1_{{_index}}"></td>
+          <td><Input type="text" value="{{price_sum}}" id="input_list_price_sum_{{_index}}"></td>
+          <td><Input type="text" value="{{seller}}" id="input_list_seller_{{_index}}"></td>
+          <td><Input type="text" value="{{datetime}}" id="input_list_datetime_{{_index}}"></td>
+          <td>
+            <input type="button" value="确定" onclick="CashierPage.mainList.onInputOkClick({{_index}})">
+            <input type="button" value="取消" onclick="CashierPage.mainList.onInputEditClick({{_index}})">
+          </td>
+          {{else}}
+          <td>{{index}}</td>
+          <td>{{id}}</td>
+          <td>{{code}}</td>
+          <td>{{name}}</td>
+          <td>{{count}}</td>
+          <td>{{price_0}}</td>
+          <td>{{price_1}}</td>
+          <td>{{price_sum}}</td>
+          <td>{{seller}}</td>
+          <td>{{datetime}}</td>
+          <td>
+            <input type="button" value="编辑" onclick="CashierPage.mainList.onInputEditClick({{_index}})">
+            <input type="button" value="删除" onclick="CashierPage.mainList.onInputDeleteClick({{_index}})">
+          </td>
+          {{/if}}
+        </tr>
+        {{/each}}
+    </script>
   </head>
   <body class="theme1">
     <div id="app">
@@ -54,6 +91,31 @@
               <label>当前时间</label>
               <input type="text" id="input_curDateTime" onchange="CashierPage.onCurDateTimeChange(this)"/>
             </li>
+            <li>
+              <label>交易明细</label>
+              <div>
+                <input type="button" value="新建" onclick="CashierPage.mainList.onInputCreateBtnClick()">
+              </div>
+              <table id="input_trade_list_table">
+                <thead>
+                  <tr>
+                    <th>序号</th>
+                    <th>编码</th>
+                    <th>条形码</th>
+                    <th>商品名称</th>
+                    <th>数量</th>
+                    <th>单价</th>
+                    <th>实际价格</th>
+                    <th>合计价格</th>
+                    <th>售货员</th>
+                    <th>时间</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="input_trade_list_table_tbody">
+                </tbody>
+              </table>
+            </li>
           </ul>
         </form>
       </div>
@@ -68,6 +130,18 @@
         id: '123',
         code: 'code',
         name: 'testName',
+        count: 1,
+        price_0: 1.26,
+        price_1: 1.26,
+        price_sum: 1.26,
+        seller: 'None',
+        datetime: 'now'
+      })
+      CashierPage.mainList.push({
+        index: 2,
+        id: 'abc',
+        code: 'code2',
+        name: 'testName2',
         count: 1,
         price_0: 1.26,
         price_1: 1.26,

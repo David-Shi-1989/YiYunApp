@@ -52,3 +52,15 @@ ul {
   height: 100%;
   padding: 0.5rem;
 }
+
+#input_trade_list_table {
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: normal;
+  border-collapse: collapse;
+  border: 0.05rem solid #ccc;
+}
+#input_trade_list_table input {
+  display: inline-block;
+  width: 2.1rem;
+}

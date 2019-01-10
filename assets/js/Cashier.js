@@ -3,11 +3,14 @@ function CashierModal () {
     def: {
       selector: {
         listDOM: 'yy_list',
-        listTpl: 'yy_tpl_list'
+        listTpl: 'yy_tpl_list',
+        listInputDOM: 'input_trade_list_table_tbody',
+        listInputTp: 'yy_tpl_list_input'
       }
     },
     mainList: {
       value: [],
+      fields: ['index','id','code','name','count','price_0','price_1','price_sum','seller','datetime'],
       getList: function () {
         for (var i = 0; i < this.value.length; i++) {
           this.value[i]._index = i
@@ -33,8 +36,43 @@ function CashierModal () {
           this.onchange();
         }
       },
+      getItem () {
+        var obj = {}
+        this.fields.forEach(function (key) {
+          obj[key] = ''
+        })
+        return obj
+      },
       onchange () {
         commonTplRender(me.def.selector.listDOM, me.def.selector.listTpl, {list: this.getList()})
+        commonTplRender(me.def.selector.listInputDOM, me.def.selector.listInputTp, {list: this.getList()})
+      },
+      onInputEditClick (index) {
+        if (!isNaN(index) && index >= 0 && index < this.value.length) {
+          this.value[parseInt(index)].isEdit = true
+          this.onchange()
+        }
+      },
+      onInputCreateBtnClick () {
+        var newItem = this.getItem()
+        newItem.isEdit = true
+        this.value.push(newItem)
+        this.onchange()
+      },
+      onInputOkClick (index) {
+        if (!isNaN(index) && index >= 0 && index < this.value.length) {
+          var targetItem = this.value[parseInt(index)]
+          this.fields.forEach(function (key) {
+            targetItem[key] = $('#input_list_'+ key +'_' + index).val()
+          })
+          targetItem.isEdit = false
+          this.onchange()
+        }
+      },
+      onInputDeleteClick (index) {
+        if (!isNaN(index) && index >= 0 && index < this.value.length) {
+          this.removeAtIndex(index)
+        }
       }
     },
     init () {
