@@ -126,6 +126,11 @@ function CashierModal () {
         $('#yy_curTime').text(this.curDateTime);
       }
     },
+    _beginDateTime: {
+      value: Date.now(),
+      writable: true,
+      configurable: false
+    },
     _shopName: {
       value: '',
       writable: true,

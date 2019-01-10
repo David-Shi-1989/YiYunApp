@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/icon/iconfont.css" />
     <link rel="stylesheet" href="assets/css/theme.css" />
     <script type="text/javascript" src="assets/vendor/jquery.min.js"></script>
     <script type="text/javascript" src="assets/vendor/handlebars/handlebars-v4.0.12.js"></script>
@@ -69,17 +70,32 @@
   <body class="theme1">
     <div id="app">
       <div id="header">
-        <p id="yy_shopName"></p>
-        <p id="yy_curTime"></p>
+        <ul>
+          <li><i class="icon iconfont icon-find"></i><span>查询</span></li>
+          <li><i class="icon iconfont icon-shuaxin"></i><span>过滤</span></li>
+          <li><i class="icon iconfont icon-renwu1"></i><span>保存</span></li>
+          <li class="with-caret"><i class="icon iconfont icon-bianji"></i><span>编辑</span></li>
+          <li><i class="icon iconfont icon-xiazai"></i><span>预览</span></li>
+          <li><i class="icon iconfont icon-file-print"></i><span>打印</span></li>
+          <li class="with-caret"><i class="icon iconfont icon-shezhi"></i><span>设置</span></li>
+          <li><i class="icon iconfont icon-icon-test"></i><span>参考</span></li>
+          <li><i class="icon iconfont icon-guanji"></i><span>关闭</span></li>
+        </ul>
+      </div>
+      <div id="tabs">
+        <span>前台销售按商品汇总</span>
+        <span>前台销售按仓库商品汇总</span>
+        <span>前台销售按仓库商品明细</span>
+        <span>前台赠送报表</span>
       </div>
       <div id="main">
         <div id="yy_list">
         </div>
       </div>
-      <div id="side">Side</div>
+      <!-- <div id="side">Side</div> -->
       <div id="foot">Foot</div>
     </div>
-    <div class="yy-modal">
+    <div class="yy-modal" style="display:none;">
       <div class="yy-modal-form-wrap">
         <form>
           <ul>
@@ -90,6 +106,14 @@
             <li>
               <label>当前时间</label>
               <input type="text" id="input_curDateTime" onchange="CashierPage.onCurDateTimeChange(this)"/>
+            </li>
+            <li>
+              <label>开始时间</label>
+              <input type="text" id="input_beginDateTime" onchange="CashierPage.onCurDateTimeChange(this)"/>
+            </li>
+            <li>
+              <label>结束时间</label>
+              <input type="text" id="input_endDateTime" onchange="CashierPage.onCurDateTimeChange(this)"/>
             </li>
             <li>
               <label>交易明细</label>

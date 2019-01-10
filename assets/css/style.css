@@ -6,6 +6,9 @@ body, html {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  --color-dark-blue: #2b85e4;
+  --color-info: #2db7f5;
+  --color-text: #333;
 }
 html {
   font-size: 20px;

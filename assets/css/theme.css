@@ -1,25 +1,98 @@
 body.theme1 #app {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 5rem auto 7.5rem;
+  grid-template-rows: 3rem 1.5rem auto 1.5rem;
   grid-template-areas: 
     "h h h h"
-    "m m m s"
+    "t t t t"
+    "m m m m"
     "f f f f";
+    background-color: #eee;
 }
+/******************************
+* Begin Header
+******************************/
 body.theme1 #header {
   grid-area: h;
-  background-color: aliceblue;
+  box-sizing: border-box;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.2rem solid var(--color-info);
 }
+body.theme1 #header ul {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0.1rem 0;
+}
+body.theme1 #header ul > li {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+body.theme1 #header ul > li.with-caret::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  top: 1.2rem;
+  right: 0.6rem;
+}
+body.theme1 #header ul > li:not(:last-child) {
+  border-right: 0.05rem solid #999;
+}
+body.theme1 #header ul > li i {
+  color: var(--color-dark-blue);
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+body.theme1 #header ul > li span{
+  color: var(--color-text);
+  display: block;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+}
+/******************************
+* End Header
+******************************/
+
+/******************************
+* Begin Tabs
+******************************/
+body.theme1 #tabs {
+  grid-area: t;
+}
+body.theme1 #tabs > span{
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+  font-size: 0.65rem;
+}
+/******************************
+* End Tabs
+******************************/
+
+/******************************
+* Begin Main
+******************************/
 body.theme1 #main {
   grid-area: m;
-  background-color: lightblue;
 }
-body.theme1 #side {
-  grid-area: s;
-  background-color: bisque;
-}
+/******************************
+* End Main
+******************************/
+
+/******************************
+* Begin Foot
+******************************/
 body.theme1 #foot {
   grid-area: f;
-  background-color: darkblue;
 }
+/******************************
+* End Foot
+******************************/
