@@ -359,13 +359,13 @@
     }
     function appendInputTd () {
       var count = 100;
-      var itemStr = '<td><input type="text" value="{INDEX}"></td>'
+      var itemStr = '<td><input type="text" value="{INDEX}" onchange="onListIndexChange({i},{j}, value)"></td>'
       var appendStr = ''
       for (var i = 0; i < count; i++) {
         appendStr += '<tr>'
         for (var j = 0; j < 16; j++) {
           var value = (j == 0 ? (i+1) : '')
-          appendStr+=itemStr.replace('{INDEX}', value)
+          appendStr+=itemStr.replace('{INDEX}', value).replace('{i}', i).replace('{j}', j)
         }
         appendStr += '</tr>'
       }
@@ -379,6 +379,18 @@
     }
     function vendorIdChange (newVal) {
       $(".v-vendorId").text(newVal)
+    }
+    function onListIndexChange (row, col, newVal) {
+      if (col == 0) {
+        // 修改的是index
+        if (!isNaN(newVal)) {
+          var indexInputArr = $("table.resizable-table.js-2 tbody > tr > td:first-child");
+          for (var i = 0; i < indexInputArr.length; i++) {
+            var curInput = $(indexInputArr[i]).find('input')[0];
+            curInput.value = (parseInt(newVal) + i - row)
+          }
+        }
+      }
     }
   </script>
 </html>
