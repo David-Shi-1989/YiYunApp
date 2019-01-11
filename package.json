@@ -1,0 +1,22 @@
+{
+  "name": "yiyunapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Shi-1989/YiYunApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-Shi-1989/YiYunApp/issues"
+  },
+  "homepage": "https://github.com/David-Shi-1989/YiYunApp#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
