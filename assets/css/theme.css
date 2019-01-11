@@ -90,7 +90,7 @@ body.theme1 #tabs > ul > li.active {
 * Begin Main
 ******************************/
 body.theme1 #main {
-  height: calc(100% - 6.2rem);
+  height: calc(100% - 7rem);
   box-sizing: border-box;
   margin: 0.3rem;
   border: var(--border-style);
@@ -165,7 +165,7 @@ body.theme1 #main #tradeListBox {
   height: calc(100% - 1.2rem);
 }
 #listWrap table {
-  width: 100%;
+  width: 100% !important;
   font-weight: normal;
   font-size: 0.6rem;
   border-collapse: collapse;
@@ -192,10 +192,17 @@ body.theme1 #main #tradeListBox {
   border: none;
   box-sizing: border-box;
   width: 100%;
+  text-align: left;
 }
 #listWrap table tbody tr > td:first-child input {
   text-align: right;
   color: blue;
+}
+#listWrap table .tr-sum {
+  font-weight: bolder;
+}
+#listWrap table .tr-sum input {
+  font-weight: bolder;
 }
 /*****************s*************
 * End Main

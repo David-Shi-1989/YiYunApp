@@ -112,12 +112,12 @@
           <ul>
             <li>
               <span>开始日期：</span>
-              <input type="text" value="2018-12-01">
+              <input type="text" value="2018-12-01" onkeyup="beginDatetimeChange(value)">
               <i class="icon iconfont icon-find"></i>
             </li>
             <li>
               <span>结束日期：</span>
-              <input type="text" value="2018-12-31">
+              <input type="text" value="2018-12-31" onkeyup="endDatetimeChange(value)">
               <i class="icon iconfont icon-find"></i>
             </li>
             <li>
@@ -139,7 +139,7 @@
           <ul>
             <li>
               <span>供应商号：</span>
-              <input type="text" value="1005">
+              <input type="text" value="1005" onkeyup="vendorIdChange(value)">
               <i class="icon iconfont icon-find"></i>
             </li>
             <li>
@@ -160,31 +160,33 @@
           </ul>
         </div>
         <div id="tradeListBox">
-          <p id="conditionBar"><span class="caret"></span>前台销售按商品汇总：开始日期：<span>2018-12-01</span>^结束日期：<span>2018-12-31</span>^供应商号：<span>1005</span></p>
+          <p id="conditionBar"><span class="caret"></span>前台销售按商品汇总：开始日期：<span class="v-beginDatetime">2018-12-01</span>^结束日期：<span class="v-endDatetime">2018-12-31</span>^供应商号：<span class="v-vendorId">1005</span></p>
           <div id="listWrap">
-            <table class="resizable-table js-1">
-              <thead>
-                <tr>
-                  <th style="color:blue;">序号</th>
-                  <th>类别</th>
-                  <th>商品编码</th>
-                  <th>国际条码</th>
-                  <th>商品名称</th>
-                  <th>销售数量</th>
-                  <th>销售金额</th>
-                  <th>退货数量</th>
-                  <th>退货金额</th>
-                  <th>赠送数量</th>
-                  <th>赠送金额</th>
-                  <th>数量小计</th>
-                  <th>金额小计</th>
-                  <th>参考进价</th>
-                  <th>进价金额</th>
-                  <th>参考利润</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+            <div style="width:100%;">
+              <table class="resizable-table js-1">
+                <thead>
+                  <tr>
+                    <th style="color:blue;">序号</th>
+                    <th>类别</th>
+                    <th>商品编码</th>
+                    <th>国际条码</th>
+                    <th>商品名称</th>
+                    <th>销售数量</th>
+                    <th>销售金额</th>
+                    <th>退货数量</th>
+                    <th>退货金额</th>
+                    <th>赠送数量</th>
+                    <th>赠送金额</th>
+                    <th>数量小计</th>
+                    <th>金额小计</th>
+                    <th>参考进价</th>
+                    <th>进价金额</th>
+                    <th>参考利润</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
             <div style="overflow-x:hidden;overflow-y:scroll;height:calc(100% - 2rem);">
               <table class="resizable-table js-2">
                 <thead style="visibility:collapse;height: 0;">
@@ -207,14 +209,61 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+            <div style="overflow-x:hidden;overflow-y:scroll;height:1rem;">
+              <table class="resizable-table js-3">
+                <thead style="visibility:collapse;height: 0;">
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="tr-sum">
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">合计</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div id="side">Side</div> -->
-      <div id="foot">Foot</div>
+      <div id="foot">
+        <i class="icon iconfont icon-yemian"></i>
+        <span style="margin: 0 0.4rem;">首页</span>
+        <span>前台销售商品汇总报表</span>
+      </div>
     </div>
     <div class="yy-modal" style="display:none;">
       <div class="yy-modal-form-wrap">
@@ -321,6 +370,15 @@
         appendStr += '</tr>'
       }
       $("#listWrap table.js-2 tbody").html(appendStr)
+    }
+    function beginDatetimeChange (newVal) {
+      $(".v-beginDatetime").text(newVal)
+    }
+    function endDatetimeChange (newVal) {
+      $(".v-endDatetime").text(newVal)
+    }
+    function vendorIdChange (newVal) {
+      $(".v-vendorId").text(newVal)
     }
   </script>
 </html>

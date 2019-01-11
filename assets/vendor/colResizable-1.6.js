@@ -213,7 +213,7 @@
         }
 	};
 	var syncCols = function(t,i,isOver){
-		for(var a=0;a<2; a++){
+		for(var a=0;a<3; a++){
 			var t = tables["JColResizer"+a];
 			var inc = drag.x-drag.l, c = t.c[i], c2 = t.c[i+1];
 			var w = c.w + inc;	var w2= c2.w- inc;	//their new width is obtained	
