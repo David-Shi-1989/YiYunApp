@@ -194,6 +194,9 @@ body.theme1 #main #tradeListBox {
   width: 100%;
   text-align: left;
 }
+#listWrap table tbody input:hover{
+  border: 0.05rem solid #aaa;
+}
 #listWrap table tbody tr > td:first-child input {
   text-align: right;
   color: blue;
