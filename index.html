@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/theme.css" />
     <script type="text/javascript" src="assets/vendor/jquery.min.js"></script>
     <script type="text/javascript" src="assets/vendor/handlebars/handlebars-v4.0.12.js"></script>
-    <script type="text/javascript" src="assets/vendor/colResizable-1.6.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/colResizable-1.6.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/Cashier.js"></script>
     <title>Market Cashier</title>
@@ -162,7 +162,7 @@
         <div id="tradeListBox">
           <p id="conditionBar"><span class="caret"></span>前台销售按商品汇总：开始日期：<span>2018-12-01</span>^结束日期：<span>2018-12-31</span>^供应商号：<span>1005</span></p>
           <div id="listWrap">
-            <table class="resizable-table">
+            <table class="resizable-table js-1">
               <thead>
                 <tr>
                   <th style="color:blue;">序号</th>
@@ -183,10 +183,33 @@
                   <th>参考利润</th>
                 </tr>
               </thead>
-              <div>
-                <tbody></tbody>
-              </div>
+              <tbody></tbody>
             </table>
+            <div style="overflow-x:hidden;overflow-y:scroll;height:calc(100% - 2rem);">
+              <table class="resizable-table js-2">
+                <thead style="visibility:collapse;height: 0;">
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -272,21 +295,32 @@
         datetime: 'now'
       })
     
-      $("table.resizable-table").colResizable({liveDrag:true, draggingClass:"dragging"}); 
+      $("table.resizable-table").colResizable({
+        liveDrag: true,
+        draggingClass:"dragging",
+        resizeMode: "overflow"
+      }); 
       setTimeout(appendInputTd, 2000)
     })
+    function fitTable2 () {
+      var thLength = $('table.resizable-table.js-1 thead th').length
+      for (var i = 0; i < thLength; i++) {
+
+      }
+    }
     function appendInputTd () {
       var count = 100;
-      var itemStr = '<td><input type="text"></td>'
+      var itemStr = '<td><input type="text" value="{INDEX}"></td>'
       var appendStr = ''
       for (var i = 0; i < count; i++) {
         appendStr += '<tr>'
         for (var j = 0; j < 16; j++) {
-          appendStr+=itemStr
+          var value = (j == 0 ? (i+1) : '')
+          appendStr+=itemStr.replace('{INDEX}', value)
         }
         appendStr += '</tr>'
       }
-      $("#listWrap table tbody").html(appendStr)
+      $("#listWrap table.js-2 tbody").html(appendStr)
     }
   </script>
 </html>

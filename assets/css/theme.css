@@ -181,6 +181,11 @@ body.theme1 #main #tradeListBox {
   height: 1rem;
   line-height: 1rem;
 }
+#listWrap table tbody {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 #listWrap table tbody input {
   background: transparent;
   background-color: transparent;
