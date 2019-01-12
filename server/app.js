@@ -25,7 +25,6 @@ app.get('*', function (req, res, next) {
   res.header('Content-Type', headerContentType)
   next()
 })
-app.use('/static', express.static('static'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
