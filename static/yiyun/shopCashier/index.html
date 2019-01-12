@@ -162,7 +162,7 @@
         <div id="tradeListBox">
           <p id="conditionBar"><span class="caret"></span>前台销售按商品汇总：开始日期：<span class="v-beginDatetime">2018-12-01</span>^结束日期：<span class="v-endDatetime">2018-12-31</span>^供应商号：<span class="v-vendorId">1005</span></p>
           <div id="listWrap">
-            <div style="width:100%;">
+            <div style="width:calc(100% - 0.8rem);">
               <table class="resizable-table js-1">
                 <thead>
                   <tr>
@@ -359,13 +359,18 @@
     }
     function appendInputTd () {
       var count = 100;
-      var itemStr = '<td><input type="text" value="{INDEX}" onchange="onListIndexChange({i},{j}, value)"></td>'
+      var itemStr = '<td><input type="text" value="{VALUE}" onchange="onListIndexChange({i},{j}, value)"></td>'
       var appendStr = ''
       for (var i = 0; i < count; i++) {
         appendStr += '<tr>'
         for (var j = 0; j < 16; j++) {
-          var value = (j == 0 ? (i+1) : '')
-          appendStr+=itemStr.replace('{INDEX}', value).replace('{i}', i).replace('{j}', j)
+          var value = ''
+          if (j == 0) {
+            value = (i+1)
+          } else if (j >= 7 && j <= 10 ) {
+            value = '0.00'
+          }
+          appendStr+=itemStr.replace('{VALUE}', value).replace('{i}', i).replace('{j}', j)
         }
         appendStr += '</tr>'
       }
