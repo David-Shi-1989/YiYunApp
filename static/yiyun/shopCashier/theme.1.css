@@ -1,0 +1,200 @@
+body.theme1 #app {
+  --border-style: solid 0.1rem #222;
+  font-size: 0.65rem;
+  font-family: '宋体';
+}
+/******************************
+* Begin Header
+******************************/
+body.theme1 #header {
+  height: 1.8rem;
+  background-color: #ededed;
+  box-sizing: border-box;
+  border: 0.05rem solid #fff;
+  box-shadow: 1px 1px 1px #a6a5ad inset;
+}
+body.theme1 #header #headerWrap {
+  height: 1.7rem;
+  box-sizing: border-box;
+  border: 0.05rem solid #a7a5b3;
+  padding: 0 0.2rem;
+}
+body.theme1 #header #headerWrap > span {
+  display: inline-block;
+  vertical-align: middle;
+}
+body.theme1 #header #headerWrap > span:first-child {
+  width: 30rem;
+  height: 1.6rem;
+  margin-top: 0.15rem;
+  background: url(img/v1/header-1.png) no-repeat;
+}
+/******************************
+* End Header
+******************************/
+
+/******************************
+* Begin Tabs
+******************************/
+body.theme1 #tabs {
+  height: 2.2rem;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  --item-height: 1.6rem;
+}
+body.theme1 #tabs > ul {
+  height: 100%;
+  border: var(--border-style);
+}
+body.theme1 #tabs > ul > li{
+  display: inline-block;
+  width: 15%;
+  height: var(--item-height);
+  line-height: var(--item-height);
+  text-align: center;
+  font-size: 0.65rem;
+}
+body.theme1 #tabs > ul > li:not(:last-child) {
+  border-right: 0.05rem solid #ccc;
+}
+body.theme1 #tabs > ul > li.active {
+  background-color: lavender;
+}
+/******************************
+* End Tabs
+******************************/
+
+/******************************
+* Begin Main
+******************************/
+body.theme1 #main {
+  height: calc(100% - 7rem);
+  box-sizing: border-box;
+  margin: 0.3rem;
+  border: var(--border-style);
+}
+body.theme1 #main #searchBox {
+  padding: 0.3rem;
+  box-sizing: border-box;
+}
+body.theme1 #main #searchBox label {
+  margin-right: 1rem;
+}
+body.theme1 #main #searchBox input[type="radio"] {
+  font-size: 2rem;
+  margin-right: 0.2rem;
+}
+body.theme1 #main #searchBox ul {
+  margin-top: 0.7rem;
+  height: 1.05rem;
+}
+body.theme1 #main #searchBox ul > li {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 15rem;
+}
+body.theme1 #main #searchBox ul > li > span {
+  display: inline-block;
+  width: 5rem;
+  text-align: right;
+  box-sizing: border-box;
+}
+body.theme1 #main #searchBox ul > li > input {
+  width: 8rem;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  background-color: transparent;
+  border-bottom: 0.05rem solid #222;
+}
+body.theme1 #main #searchBox ul > li > i {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.6rem;
+  border: 0.05rem solid #ccc;
+}
+body.theme1 #main #tradeListBox {
+  border-top: var(--border-style);
+  padding: 0.3rem 0.5rem 0.2rem 0.5rem;
+  height: calc(100% - 6rem);
+}
+#conditionBar {
+  height: 1rem;
+  color: blue;
+  position: relative;
+  padding-left: 0.7rem;
+}
+#conditionBar span.caret{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 0.3rem;
+  border-style: solid;
+  border-color: blue transparent transparent transparent;
+  top: 0.5rem;
+  left: 0;
+}
+#listWrap {
+  border: var(--border-style);
+  height: calc(100% - 1.2rem);
+}
+#listWrap table {
+  width: 100% !important;
+  font-weight: normal;
+  font-size: 0.6rem;
+  border-collapse: collapse;
+}
+#listWrap table thead {
+  font-weight: normal;
+  background-color: #ddd;
+}
+#listWrap table thead th {
+  font-weight: normal;
+  text-align: center;
+  width: 6.25%;
+  height: 1rem;
+  line-height: 1rem;
+}
+#listWrap table tbody {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#listWrap table tbody input {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+}
+#listWrap table tbody input:hover{
+  border: 0.05rem solid #aaa;
+}
+#listWrap table tbody tr > td:first-child input {
+  text-align: right;
+  color: blue;
+}
+#listWrap table .tr-sum {
+  font-weight: bolder;
+}
+#listWrap table .tr-sum input {
+  font-weight: bolder;
+}
+/*****************s*************
+* End Main
+******************************/
+
+/******************************
+* Begin Foot
+******************************/
+body.theme1 #foot {
+  height: 1rem;
+}
+/******************************
+* End Foot
+******************************/
