@@ -1,5 +1,5 @@
 body.theme1 #app {
-  --border-style: solid 0.1rem #222;
+  --border-style: solid 0.05rem #646464;
   font-size: 0.65rem;
   font-family: '宋体';
 }
@@ -71,54 +71,17 @@ body.theme1 #main {
   height: calc(100% - 7rem);
   box-sizing: border-box;
   margin: 0.3rem;
-  border: var(--border-style);
 }
 body.theme1 #main #searchBox {
   padding: 0.3rem;
   box-sizing: border-box;
 }
-body.theme1 #main #searchBox label {
-  margin-right: 1rem;
-}
-body.theme1 #main #searchBox input[type="radio"] {
-  font-size: 2rem;
-  margin-right: 0.2rem;
-}
-body.theme1 #main #searchBox ul {
-  margin-top: 0.7rem;
-  height: 1.05rem;
-}
-body.theme1 #main #searchBox ul > li {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 15rem;
-}
-body.theme1 #main #searchBox ul > li > span {
-  display: inline-block;
-  width: 5rem;
-  text-align: right;
-  box-sizing: border-box;
-}
-body.theme1 #main #searchBox ul > li > input {
-  width: 8rem;
-  box-sizing: border-box;
-  border: none;
-  background: transparent;
-  background-color: transparent;
-  border-bottom: 0.05rem solid #222;
-}
-body.theme1 #main #searchBox ul > li > i {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 1rem;
-  height: 1rem;
-  line-height: 1rem;
-  text-align: center;
-  font-size: 0.6rem;
-  border: 0.05rem solid #ccc;
+body.theme1 #main #searchBox input {
+  width: 4rem;
+  vertical-align:bottom;
+  margin-left: 0.3rem;
 }
 body.theme1 #main #tradeListBox {
-  border-top: var(--border-style);
   padding: 0.3rem 0.5rem 0.2rem 0.5rem;
   height: calc(100% - 6rem);
 }
@@ -150,7 +113,8 @@ body.theme1 #main #tradeListBox {
 }
 #listWrap table thead {
   font-weight: normal;
-  background-color: #ddd;
+  background-color: #fff;
+  border-bottom: 0.05rem solid #f0f0f0;
 }
 #listWrap table thead th {
   font-weight: normal;
@@ -158,22 +122,15 @@ body.theme1 #main #tradeListBox {
   width: 6.25%;
   height: 1rem;
   line-height: 1rem;
+  box-sizing: border-box;
+}
+#listWrap table thead th:not(:last-child) {
+  border-right: 0.05rem solid #f0f0f0;
 }
 #listWrap table tbody {
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-}
-#listWrap table tbody input {
-  background: transparent;
-  background-color: transparent;
-  border: none;
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-}
-#listWrap table tbody input:hover{
-  border: 0.05rem solid #aaa;
 }
 #listWrap table tbody tr > td:first-child input {
   text-align: right;
@@ -184,6 +141,18 @@ body.theme1 #main #tradeListBox {
 }
 #listWrap table .tr-sum input {
   font-weight: bolder;
+}
+table.js-2 tbody tr td {
+  box-sizing: border-box;
+}
+table.js-2 tbody tr td:not(:last-child) {
+  border-right: 0.05rem solid #f0f0f0;
+}
+table.js-2 tbody tr:not(:last-child) {
+  border-bottom: 0.05rem solid #f0f0f0;
+}
+table.js-3 tbody tr td {
+  
 }
 /*****************s*************
 * End Main

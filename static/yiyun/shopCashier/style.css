@@ -23,7 +23,19 @@ label {
 ul {
   list-style: none;
 }
-
+input.tb_border_none {
+  display: inline-block;
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  vertical-align: middle;
+}
+input.tb_border_none:hover{
+  border: 0.05rem solid #aaa;
+}
 /*************
 * 弹窗
 **************/
