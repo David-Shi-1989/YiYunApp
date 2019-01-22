@@ -2,10 +2,18 @@ body.theme1 #app {
   --border-style: solid 0.05rem #646464;
   font-size: 0.65rem;
   font-family: '宋体';
+  padding: 0 0.4rem;
 }
 /******************************
 * Begin Header
 ******************************/
+#header0 {
+  font-size: 0.6rem;
+  height: 1.6rem;
+  line-height: 2rem;
+  background-image: url(./img/v2/window-bg.png);
+  background-size: 100% 100%;
+}
 body.theme1 #header {
   height: 1.8rem;
   background-color: #ededed;
@@ -68,7 +76,7 @@ body.theme1 #tabs > ul > li.active {
 * Begin Main
 ******************************/
 body.theme1 #main {
-  height: calc(100% - 7rem);
+  height: calc(100% - 4rem);
   box-sizing: border-box;
   margin: 0.3rem;
 }
@@ -82,8 +90,8 @@ body.theme1 #main #searchBox input {
   margin-left: 0.3rem;
 }
 body.theme1 #main #tradeListBox {
-  padding: 0.3rem 0.5rem 0.2rem 0.5rem;
-  height: calc(100% - 6rem);
+  padding: 0 0.5rem 0.2rem 0.5rem;
+  height: calc(100% - 1.6rem);
 }
 #conditionBar {
   height: 1rem;
@@ -109,6 +117,7 @@ body.theme1 #main #tradeListBox {
   width: 100% !important;
   font-weight: normal;
   font-size: 0.6rem;
+  font-family: '宋体';
   border-collapse: collapse;
 }
 #listWrap table thead {
@@ -132,15 +141,29 @@ body.theme1 #main #tradeListBox {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-#listWrap table tbody tr > td:first-child input {
+#listWrap table tbody tr > td:nth-child(1) input,
+#listWrap table tbody tr > td:nth-child(5) input {
+  text-align: center;
+}
+#listWrap table tbody tr > td:nth-child(6) input,
+#listWrap table tbody tr > td:nth-child(7) input,
+#listWrap table tbody tr > td:nth-child(8) input,
+#listWrap table tbody tr > td:nth-child(9) input,
+#listWrap table tbody tr > td:nth-child(10) input,
+#listWrap table tbody tr > td:nth-child(11) input,
+#listWrap table tbody tr > td:nth-child(12) input,
+#listWrap table tbody tr > td:nth-child(13) input,
+#listWrap table tbody tr > td:nth-child(14) input,
+#listWrap table tbody tr > td:nth-child(15) input,
+#listWrap table tbody tr > td:nth-child(20) input,
+#listWrap table tbody tr > td:nth-child(21) input{
   text-align: right;
-  color: blue;
 }
 #listWrap table .tr-sum {
-  font-weight: bolder;
 }
 #listWrap table .tr-sum input {
   font-weight: bolder;
+  font-family: '宋体';
 }
 table.js-2 tbody tr td {
   box-sizing: border-box;
@@ -152,7 +175,7 @@ table.js-2 tbody tr:not(:last-child) {
   border-bottom: 0.05rem solid #f0f0f0;
 }
 table.js-3 tbody tr td {
-  
+  font-family: '宋体';
 }
 /*****************s*************
 * End Main

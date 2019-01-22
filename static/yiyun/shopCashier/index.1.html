@@ -70,6 +70,7 @@
   </head>
   <body class="theme1">
     <div id="app">
+      <div id="header0">商品销售汇总报表</div>
       <div id="header">
         <div id="headerWrap">
           <span></span>
@@ -181,7 +182,7 @@
                 <tbody>
                   <tr class="tr-sum">
                     <td></td>
-                    <td>合计</td>
+                    <td style="text-align:center;font-weight:bolder;">合计：</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -199,11 +200,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div id="foot">
-        <i class="icon iconfont icon-yemian"></i>
-        <span style="margin: 0 0.4rem;">首页</span>
-        <span>前台销售商品汇总报表</span>
       </div>
     </div>
     <div class="yy-modal" style="display:none;">
@@ -260,30 +256,7 @@
     $(function () {
       CashierPage = new CashierModal()
       CashierPage.init()
-      CashierPage.mainList.push({
-        index: 1,
-        id: '123',
-        code: 'code',
-        name: 'testName',
-        count: 1,
-        price_0: 1.26,
-        price_1: 1.26,
-        price_sum: 1.26,
-        seller: 'None',
-        datetime: 'now'
-      })
-      CashierPage.mainList.push({
-        index: 2,
-        id: 'abc',
-        code: 'code2',
-        name: 'testName2',
-        count: 1,
-        price_0: 1.26,
-        price_1: 1.26,
-        price_sum: 1.26,
-        seller: 'None',
-        datetime: 'now'
-      })
+      
     
       // $("table.resizable-table").colResizable({
       //   liveDrag: true,
