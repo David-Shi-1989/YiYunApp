@@ -94,126 +94,183 @@
         <div id="headerWrap_d2" class="css-window-title">商品汇总报表</div>
         <div id="headerWrap_d3">
           <ul style="display:flex;">
-            <li>刷新</li>
-            <li class="has-caret">日期</li>
-            <li>条件</li>
-            <li>筛选</li>
-            <li>设置</li>
-            <li>保存</li>
-            <li>图示</li>
-            <li>预览</li>
-            <li>打印</li>
-            <li>退出</li>
+            <li><i class="icon iconfont icon-shuaxin"></i>刷新</li>
+            <li class="has-caret"><i class="icon iconfont icon-shijian"></i>日期</li>
+            <li><i class="icon iconfont icon-_GJDdangqianbiaogongshi"></i>条件</li>
+            <li><i class="icon iconfont icon-shaixuanxuanzhong"></i>筛选</li>
+            <li><i class="icon iconfont icon-icon-test1"></i>设置</li>
+            <li><i class="icon iconfont icon-baocun"></i>保存</li>
+            <li><i class="icon iconfont icon-icp-active-pie"></i>图示</li>
+            <li><i class="icon iconfont icon-yulan"></i>预览</li>
+            <li><i class="icon iconfont icon-file-print"></i>打印</li>
+            <li><i class="icon iconfont icon-tuichu"></i>退出</li>
           </ul>
         </div>
       </div>
-      <div id="tabs">
-        <p style="text-align:center;font-family:'黑体';font-size:1.4rem;">商品销售汇总报表</p>
-      </div>
       <div id="main">
         <div id="searchBox">
-          <div style="height: 1rem;">
-            <span>统计时间：</span>
-            <input class="tb_border_none" value="从2018-12-01 到 2018-12-31 共31天"/>
-            <span>备&nbsp&nbsp&nbsp注：</span>
-            <input class="tb_border_none" value="名称包含：洁伶;"/>
+          <p style="text-align:right;font-family:'黑体';font-size:1.4rem;margin-bottom: 1rem;width:25rem;">商品汇总报表</p>
+          <div style="display:flex;">
+            <div style="height: 1rem;">
+              <span>统计时间：</span>
+              <input class="tb_border_none" value="从2018-12-01 到 2018-12-31 共31天"/>
+              <span>备&nbsp&nbsp&nbsp注：</span>
+              <input class="tb_border_none" value="名称包含：洁伶;"/>
+            </div>
+            <div id="searchBox_1">
+              <p>商品模糊查找（F2）</p>
+            </div>
           </div>
         </div>
         <div id="tradeListBox">
-          <div id="listWrap">
-            <div style="width:calc(100% - 0.8rem);">
+          <div id="listWrap" style="background-color:rgb(219, 245, 223);">
+            <div style="width:calc(100% - 0.85rem);">
               <table class="resizable-table js-1">
                 <thead>
                   <tr>
-                    <th style="width:2.05%;">行号</th>
-                    <th style="width:5%;">货号</th>
-                    <th style="width:6.67%;">品名</th>
-                    <th style="width:4.72%;">规格</th>
-                    <th style="width:2.66%;">单位</th>
-                    <th style="width:4.94%;">销售数量</th>
-                    <th style="width:5.33%;">销售金额</th>
-                    <th style="width:3.05%;">退货数量</th>
-                    <th style="width:3.22%;">退货金额</th>
-                    <th style="width:3.05%;">赠送数量</th>
-                    <th style="width:3.05%;">赠送金额</th>
-                    <th style="width:4.61%;">数量小计</th>
-                    <th style="width:4.77%;">金额小计</th>
-                    <th style="width:3.33%;">平均售价</th>
-                    <th style="width:3.66%;">自编码</th>
+                    <th style="width:7%;">行号</th>
+                    <th style="width:7%;">类别</th>
+                    <th style="width:7%;">货号</th>
+                    <th style="width:7%;">商品条码</th>
+                    <th style="width:7%;">商品名称</th>
+                    <th style="width:7%;">销售数量</th>
+                    <th style="width:7%;">销售金额</th>
+                    <th style="width:7%;">毛利</th>
+                    <th style="width:7%;">毛利率</th>
+                    <th style="width:7%;">让利金额</th>
+                    <th style="width:7%;">进价金额</th>
+                    <th style="width:7%;">进价</th>
+                    <th style="width:7%;">销售价</th>
+                    <th style="width:9%;">供应商</th>
+                    <!-- <th style="width:3.66%;">自编码</th>
                     <th style="width:6.83%;">简称</th>
                     <th style="width:3.61%;">类别编码</th>
                     <th style="width:5.67%;">类别名称</th>
                     <th style="width:4.5%;">品牌</th>
                     <th style="width:3.83%;">进项税</th>
-                    <th style="width:3.55%;">销项税</th>
+                    <th style="width:3.55%;">销项税</th> -->
                   </tr>
                 </thead>
                 <tbody></tbody>
               </table>
             </div>
-            <div style="overflow-x:hidden;overflow-y:scroll;height:calc(100% - 2rem);">
+            <div style="overflow-x:hidden;overflow-y:scroll;height:calc(100% - 9rem);">
               <table class="resizable-table js-2">
                 <thead style="visibility:collapse;height: 0;">
                   <tr>
-                    <th style="width:2.05%;"></th>
-                    <th style="width:5%;"></th>
-                    <th style="width:6.67%;"></th>
-                    <th style="width:4.72%;"></th>
-                    <th style="width:2.66%;"></th>
-                    <th style="width:4.94%;"></th>
-                    <th style="width:5.33%;"></th>
-                    <th style="width:3.05%;"></th>
-                    <th style="width:3.22%;"></th>
-                    <th style="width:3.05%;"></th>
-                    <th style="width:3.05%;"></th>
-                    <th style="width:4.61%;"></th>
-                    <th style="width:4.77%;"></th>
-                    <th style="width:3.33%;"></th>
-                    <th style="width:3.66%;"></th>
-                    <th style="width:6.83%;"></th>
-                    <th style="width:3.61%;"></th>
-                    <th style="width:5.67%;"></th>
-                    <th style="width:4.5%;"></th>
-                    <th style="width:3.83%;"></th>
-                    <th style="width:3.55%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:7%;"></th>
+                    <th style="width:9%;"></th>
                   </tr>
                 </thead>
                 <tbody>
                 </tbody>
               </table>
             </div>
-            <div style="overflow-x:hidden;overflow-y:scroll;height:1rem;">
+            <div style="overflow-x:hidden;overflow-y:scroll;height:5rem;">
               <table class="resizable-table js-3">
                 <thead style="visibility:collapse;height: 0;">
                   <tr>
-                    <th style="width:2.05%;"></th>
-                    <th style="width:5%;"></th>
-                    <th style="width:6.67%;"></th>
-                    <th style="width:4.72%;"></th>
-                    <th style="width:2.66%;"></th>
-                    <th style="width:4.94%;"></th>
-                    <th style="width:5.33%;"></th>
-                    <th style="width:3.05%;"></th>
-                    <th style="width:3.22%;"></th>
-                    <th style="width:3.05%;"></th>
-                    <th style="width:3.05%;"></th>
-                    <th style="width:4.61%;"></th>
-                    <th style="width:4.77%;"></th>
-                    <th style="width:3.33%;"></th>
-                    <th style="width:3.66%;"></th>
-                    <th style="width:6.83%;"></th>
-                    <th style="width:3.61%;"></th>
-                    <th style="width:5.67%;"></th>
-                    <th style="width:4.5%;"></th>
-                    <th style="width:3.83%;"></th>
-                    <th style="width:3.55%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:7%;"></th>
+                      <th style="width:9%;"></th>
                   </tr>
                 </thead>
                 <tbody>
+                  <tr style="background-color:rgb(219, 245, 223);">
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="5类" style="text-align:center;"></td>
+                    <td><input class="tb_border_none" type="text" value="02020404"></td>
+                    <td><input class="tb_border_none" type="text" value=""></td>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="82.00"></td>
+                    <td><input class="tb_border_none" type="text" value="798.50"></td>
+                    <td><input class="tb_border_none" type="text" value="92.64"></td>
+                    <td><input class="tb_border_none" type="text" value="-5.10"></td>
+                    <td><input class="tb_border_none" type="text" value="66.80"></td>
+                    <td><input class="tb_border_none" type="text" value="705.86"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="4类" style="text-align:center;"></td>
+                    <td><input class="tb_border_none" type="text" value="02020404"></td>
+                    <td><input class="tb_border_none" type="text" value="卫生巾"></td>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="82.00"></td>
+                    <td><input class="tb_border_none" type="text" value="798.50"></td>
+                    <td><input class="tb_border_none" type="text" value="92.64"></td>
+                    <td><input class="tb_border_none" type="text" value="-5.10"></td>
+                    <td><input class="tb_border_none" type="text" value="66.80"></td>
+                    <td><input class="tb_border_none" type="text" value="705.86"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="小类" style="text-align:center;"></td>
+                    <td><input class="tb_border_none" type="text" value="020204"></td>
+                    <td><input class="tb_border_none" type="text" value="家用纸制品"></td>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="82.00"></td>
+                    <td><input class="tb_border_none" type="text" value="798.50"></td>
+                    <td><input class="tb_border_none" type="text" value="92.64"></td>
+                    <td><input class="tb_border_none" type="text" value="-5.10"></td>
+                    <td><input class="tb_border_none" type="text" value="66.80"></td>
+                    <td><input class="tb_border_none" type="text" value="705.86"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="中类" style="text-align:center;"></td>
+                    <td><input class="tb_border_none" type="text" value="0202"></td>
+                    <td><input class="tb_border_none" type="text" value="清洁用品"></td>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="82.00"></td>
+                    <td><input class="tb_border_none" type="text" value="798.50"></td>
+                    <td><input class="tb_border_none" type="text" value="92.64"></td>
+                    <td><input class="tb_border_none" type="text" value="-5.10"></td>
+                    <td><input class="tb_border_none" type="text" value="66.80"></td>
+                    <td><input class="tb_border_none" type="text" value="705.86"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="大类" style="text-align:center;"></td>
+                    <td><input class="tb_border_none" type="text" value="02"></td>
+                    <td><input class="tb_border_none" type="text" value="非食品柜"></td>
+                    <td></td>
+                    <td><input class="tb_border_none" type="text" value="82.00"></td>
+                    <td><input class="tb_border_none" type="text" value="798.50"></td>
+                    <td><input class="tb_border_none" type="text" value="92.64"></td>
+                    <td><input class="tb_border_none" type="text" value="-5.10"></td>
+                    <td><input class="tb_border_none" type="text" value="66.80"></td>
+                    <td><input class="tb_border_none" type="text" value="705.86"></td>
+                  </tr>
                   <tr class="tr-sum">
                     <td></td>
-                    <td style="text-align:center;font-weight:bolder;">合计：</td>
                     <td></td>
+                    <td style="text-align:right;font-weight:bolder;">合计：</td>
                     <td></td>
                     <td></td>
                     <td><input class="tb_border_none" type="text" value="241.00"></td>
@@ -230,6 +287,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <div id="foot">
+        <span>欢迎使用[泰格至尊商业管理软件]</span>
+        <span style="margin-left:5rem;">1001[系统管理员]</span>
+        <input class="tb_border_none" value="2019-01-16 10:47AM"  style="margin-left:2rem;"/>
       </div>
     </div>
     <div class="yy-modal" style="display:none;">
