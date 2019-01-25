@@ -1,0 +1,237 @@
+html {
+  font-size: 20px;
+}
+body.theme1 #app {
+  --border-style: solid 0.05rem #646464;
+  font-size: 0.65rem;
+  font-family: '宋体';
+}
+.css-window-title {
+  font-size: 0.7rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  background-color: blue;
+  color: #fff;
+  font-weight: bolder;
+  padding: 0 0.5rem;
+}
+.css-has-underline {
+  text-decoration: underline;
+}
+/******************************
+* Begin Header
+******************************/
+#header0 {
+}
+body.theme1 #header {
+  --header-height: 1.3rem;
+  height: caalc(var(--header-height) + 1.6rem);
+  background-color: #ededed;
+  box-sizing: border-box;
+}
+body.theme1 #header #headerWrap {
+  height: 100%;
+  line-height: var(--header-height);
+  box-sizing: border-box;
+  border: 0.05rem solid #a7a5b3;
+  padding: 0 0.5rem;
+}
+body.theme1 #header #headerWrap > span {
+  display: inline-block;
+  vertical-align: middle;
+}
+body.theme1 #header #headerWrap > span:first-child {
+  width: 30rem;
+  height: 1.6rem;
+  margin-top: 0.15rem;
+  background: url(img/v1/header-1.png) no-repeat;
+}
+#headerWrap_d1 {
+  height: calc(var(--header-height) - 0.1rem);
+  line-height: var(--header-height);
+}
+#headerWrap_d1 > span:not(:first-child) {
+  margin-left: 6px;
+}
+#headerWrap_d3 {
+  height: 1.6rem;
+  padding: 0 0.5rem;
+}
+#headerWrap_d3 ul {
+  display: flex;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  margin-top: 0.2rem;
+}
+#headerWrap_d3 ul > li {
+  padding: 0 0.6rem;
+  position: relative;
+}
+#headerWrap_d3 ul > li:not(:last-child) {
+  border-right: 0.05rem solid #ccc;
+}
+#headerWrap_d3 ul > li.has-caret::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  top: 0.5rem;
+  right: 0.1rem;
+}
+/******************************
+* End Header
+******************************/
+
+/******************************
+* Begin Tabs
+******************************/
+body.theme1 #tabs {
+  height: 2.2rem;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  --item-height: 1.6rem;
+}
+body.theme1 #tabs > ul {
+  height: 100%;
+  border: var(--border-style);
+}
+body.theme1 #tabs > ul > li{
+  display: inline-block;
+  width: 15%;
+  height: var(--item-height);
+  line-height: var(--item-height);
+  text-align: center;
+  font-size: 0.65rem;
+}
+body.theme1 #tabs > ul > li:not(:last-child) {
+  border-right: 0.05rem solid #ccc;
+}
+body.theme1 #tabs > ul > li.active {
+  background-color: lavender;
+}
+/******************************
+* End Tabs
+******************************/
+
+/******************************
+* Begin Main
+******************************/
+body.theme1 #main {
+  height: calc(100% - 4rem);
+  box-sizing: border-box;
+  margin: 0.3rem;
+}
+body.theme1 #main #searchBox {
+  padding: 0.3rem;
+  box-sizing: border-box;
+}
+body.theme1 #main #searchBox input {
+  width: 15rem;
+  vertical-align:bottom;
+  margin-left: 0.3rem;
+  border-bottom: #333 solid 0.05rem;
+}
+body.theme1 #main #tradeListBox {
+  padding: 0 0.5rem 0.2rem 0.5rem;
+  height: calc(100% - 1.6rem);
+}
+#conditionBar {
+  height: 1rem;
+  color: blue;
+  position: relative;
+  padding-left: 0.7rem;
+}
+#conditionBar span.caret{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 0.3rem;
+  border-style: solid;
+  border-color: blue transparent transparent transparent;
+  top: 0.5rem;
+  left: 0;
+}
+#listWrap {
+  border: var(--border-style);
+  height: calc(100% - 1.2rem);
+}
+#listWrap table {
+  width: 100% !important;
+  font-weight: normal;
+  font-size: 0.6rem;
+  font-family: '宋体';
+  border-collapse: collapse;
+}
+#listWrap table thead {
+  font-weight: normal;
+  background-color: #fff;
+  border-bottom: 0.05rem solid #f0f0f0;
+}
+#listWrap table thead th {
+  font-weight: normal;
+  text-align: center;
+  width: 6.25%;
+  height: 1rem;
+  line-height: 1rem;
+  box-sizing: border-box;
+}
+#listWrap table thead th:not(:last-child) {
+  border-right: 0.05rem solid #f0f0f0;
+}
+#listWrap table tbody {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#listWrap table tbody tr > td:nth-child(1) input,
+#listWrap table tbody tr > td:nth-child(5) input {
+  text-align: center;
+}
+#listWrap table tbody tr > td:nth-child(6) input,
+#listWrap table tbody tr > td:nth-child(7) input,
+#listWrap table tbody tr > td:nth-child(8) input,
+#listWrap table tbody tr > td:nth-child(9) input,
+#listWrap table tbody tr > td:nth-child(10) input,
+#listWrap table tbody tr > td:nth-child(11) input,
+#listWrap table tbody tr > td:nth-child(12) input,
+#listWrap table tbody tr > td:nth-child(13) input,
+#listWrap table tbody tr > td:nth-child(14) input,
+#listWrap table tbody tr > td:nth-child(15) input,
+#listWrap table tbody tr > td:nth-child(20) input,
+#listWrap table tbody tr > td:nth-child(21) input{
+  text-align: right;
+}
+#listWrap table .tr-sum {
+}
+#listWrap table .tr-sum input {
+  font-weight: bolder;
+  font-family: '宋体';
+}
+table.js-2 tbody tr td {
+  box-sizing: border-box;
+}
+table.js-2 tbody tr td:not(:last-child) {
+  border-right: 0.05rem solid #f0f0f0;
+}
+table.js-2 tbody tr:not(:last-child) {
+  border-bottom: 0.05rem solid #f0f0f0;
+}
+table.js-3 tbody tr td {
+  font-family: '宋体';
+}
+/*****************s*************
+* End Main
+******************************/
+
+/******************************
+* Begin Foot
+******************************/
+body.theme1 #foot {
+  height: 1rem;
+}
+/******************************
+* End Foot
+******************************/
